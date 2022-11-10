@@ -18,7 +18,7 @@ function search() {
     if(names.length < 1){
         Notiflix.Notify.info("Please enter");
     }
-    else {API.fetchCountries(names).then(renderCountries).catch( Notiflix.Notify.failure("Oops, there is no country with that name"));}
+    else {API.fetchCountries(names).then(renderCountries).catch(error =>{Notiflix.Notify.failure("Oops, there is no country with that name"); console.log(error)} );}
     
 }
 
